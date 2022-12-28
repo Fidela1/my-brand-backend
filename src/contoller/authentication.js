@@ -1,6 +1,7 @@
 import User from './../models/user';
 import catchAsync from '../../utils/catchAsync';
 import AppError from '../../utils/appError';
+
 const jwt = require('jsonwebtoken');
 
 const signToken = id => {
@@ -47,16 +48,11 @@ const token = signToken(user._id);
 });
 //       
 //     }
+//        
+
+exports.protect = catchAsync(async(req, res, next) => {
 //    
-//     
-
-//     
-//     
-//     
-
-// exports.protect = catchAsync(async(req, res, next) => {
-//     let token;
-//  // Getting the token and check if it's exist
+ // Getting the token and check if it's exist
 // if(
 //     req.headers.authorization.startsWith('Bearer')) {
 //      token = req.headers.authorization.split(' ')[1];
@@ -72,4 +68,4 @@ const token = signToken(user._id);
 
 //  // check if changed password after the token issued
 //     next();
-// });
+});
