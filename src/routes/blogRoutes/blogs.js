@@ -1,6 +1,6 @@
 import express from "express";
-const validation = require('../../validation/blogValidation')
-
+import validation from "../../validation/blogValidation";
+import authentication from "../../contoller/authentication"
 
 import {
   getAllBlogs,
@@ -24,7 +24,7 @@ const {
     } = require('../../validation/validatinMiddleware')
     
 router
-      .get("/", getAllBlogs)
+      .get("/", authentication.protect, getAllBlogs)
       .post("/" , validate(validation.person),createBlog)
       .get("/:id",getBlog)
       .patch("/:id",updateBlog )

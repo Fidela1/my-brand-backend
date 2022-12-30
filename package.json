@@ -5,6 +5,7 @@
   "scripts": {
     "test": "better-npm-run node_modules/jest",
     "dev": "better-npm-run dev"
+    
   },
   "betterScripts": {
     "dev": {
@@ -56,6 +57,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "promisfy": "^1.2.0",
     "save-dev": "^0.0.1-security",
     "slugify": "^1.6.5",
     "super": "^0.2.3",
