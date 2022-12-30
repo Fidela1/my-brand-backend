@@ -1,5 +1,6 @@
 import express from "express";
-
+import validation from "../../validation/blogValidation";
+import authentication from "../../contoller/authentication"
 
 import {
   getAllBlogs,
@@ -16,11 +17,15 @@ import {
 } from '../../contoller/blogs';
 
 import { get } from "mongoose";
-const router = express.Router();
 
+const router = express.Router();
+const {
+      validate
+    } = require('../../validation/validatinMiddleware')
+    
 router
-      .get("/", getAllBlogs)
-      .post("/", createBlog)
+      .get("/", authentication.protect, getAllBlogs)
+      .post("/" , validate(validation.person),createBlog)
       .get("/:id",getBlog)
       .patch("/:id",updateBlog )
       .delete("/:id", deleteBlog)
@@ -40,5 +45,5 @@ router
       .post("/:id/messages",blogmessages)
       .get("/:id/messages", getBlogMessage)
 
-
+      
 export default router;

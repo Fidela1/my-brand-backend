@@ -2,11 +2,12 @@ import Blog from "../models/post";
 import Comment from "../models/comment";
 import Like from "../models/likeModel";
 import Message from "../models/messageModel";
-
 export const getAllBlogs = (async (req, res) => {
     const blogs = await Blog.find();
     res.send(blogs);
   });
+ 
+    
   export const createBlog = (async (req, res) => {
     const blog = new Blog({
       title: req.body.title,
