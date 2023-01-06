@@ -1,7 +1,8 @@
 import express from "express";
 import validation from "../../validation/blogValidation";
 import authentication from "../../contoller/authentication"
-
+import multer from "multer"
+const upload = multer ({dest:'uploads/'});
 import {
   getAllBlogs,
   createBlog,

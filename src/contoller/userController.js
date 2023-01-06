@@ -14,4 +14,5 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
     });
     await user.save();
     res.send(user);
+    res.sendStatus(200)
   });

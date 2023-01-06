@@ -9,10 +9,9 @@ const schema = mongoose.Schema({
     required:true,
   },
 
-  imagesUrl:{
+  image:{
     type: String,
   
-
 },
 });
 

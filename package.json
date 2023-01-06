@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "better-npm-run node_modules/jest",
-    "dev": "better-npm-run dev"
-    
+    "test": "jest",
+    "dev": "better-npm-run dev",
+    "start": "nodemon server.js"
   },
   "betterScripts": {
     "dev": {
-      "command": "nodemon --exec babel-node ./src/index",
+      "command": "nodemon --exec babel-node ./src/server",
       "env": {
         "PORT": 3080,
         "NODE_ENV": "development"

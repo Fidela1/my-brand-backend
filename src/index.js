@@ -7,7 +7,11 @@ const port = process.env.PORT;
 mongoose
   .connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
   .then(() => {
-    const app = express();
+    
+   
+    
+  });
+  const app = express();
 
   
     app.use(express.json());
@@ -21,7 +25,5 @@ mongoose
     });    
     app.use("/api/v1", routes);
 
-    app.listen(port, () => {
-      console.log(`Server has started at ${port}`);
-    });
-  });
+
+export default app;
