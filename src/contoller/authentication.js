@@ -14,8 +14,9 @@ const newUser = await User.create(req.body);
 
 const token = signToken(newUser._id)
 
-    res.status(201).json({
+    res.json({
         status: 'success',
+        statusCode:201,
         token,
         data: {
             user: newUser
@@ -41,7 +42,7 @@ if(!user || !await user.correctPassword(password, user.password)){
 
         // if everything ok,send token to client
 const token = signToken(user._id);
-    res.status(200).json({
+    res.json({
         status: 'success',
         token
     });

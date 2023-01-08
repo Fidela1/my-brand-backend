@@ -4,6 +4,7 @@ import validation from "../../validation/userValidation";
 
 import {
       getAllUsers,
+      deleteAllUsers,
       createUser
 }from '../../contoller/userController';
 const router = express.Router();
@@ -13,7 +14,7 @@ const {
     } = require('../../validation/validatinMiddleware')
 router
       .get("/",getAllUsers)
-      .post("/", createUser)
+      .delete("/",deleteAllUsers)
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 export default router;

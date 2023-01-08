@@ -12,6 +12,7 @@ export const getAllBlogs = (async (req, res) => {
     const blog = new Blog({
       title: req.body.title,
       description: req.body.description,
+      image:req.body.image
     
     });
     await blog.save();
