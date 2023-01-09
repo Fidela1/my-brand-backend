@@ -35,7 +35,7 @@ describe("blog tests", () => {
  
   describe("GET /api/v1/blogs/:id", () => {
     it('should respond with a 200 status code', async () => {
-      const response = await request(app).get("/api/v1/blogs/:id")
+      const response = await request(app).get("/api/v1/blogs/63bbefb6bd4bcf1a64b9f576")
         .send(blogData)
       expect(response.statusCode).toBe(200)
     })
