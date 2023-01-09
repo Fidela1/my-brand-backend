@@ -33,11 +33,11 @@ describe("blog tests", () => {
     })
   })
  
-  // describe("GET /api/v1/blogs", () => {
-  //   it('should respond with a 200 status code', async () => {
-  //     const response = await request(app).get("/api/v1/blogs/:id")
-  //       .send(blogData)
-  //     expect(response.statusCode).toBe(200)
-  //   })
-  // }) 
+  describe("GET /api/v1/blogs/:id", () => {
+    it('should respond with a 200 status code', async () => {
+      const response = await request(app).get("/api/v1/blogs/:id")
+        .send(blogData)
+      expect(response.statusCode).toBe(200)
+    })
+  }) 
 })
