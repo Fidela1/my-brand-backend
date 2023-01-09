@@ -1,8 +1,8 @@
 import welcome from './welcome.js';
 import {user, userDefinition} from './user';
-
-const paths = { ...welcome, ...user};
-const definitions = {...userDefinition}
+import {blog, blogDefinition} from './blog';
+const paths = { ...welcome, ...user, ...blog};
+const definitions = {...userDefinition, ...blogDefinition}
 
 const config = {
   swagger: '2.0',

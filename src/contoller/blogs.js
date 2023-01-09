@@ -3,25 +3,44 @@ import Comment from "../models/comment";
 import Like from "../models/likeModel";
 import Message from "../models/messageModel";
 export const getAllBlogs = (async (req, res) => {
-    const blogs = await Blog.find();
-    res.send(blogs);
+    const newBlog = await Blog.find();
+
+    res.json({
+      status: 'success',
+      statusCode:200,
+      data: {
+          blog: newBlog
+      }
+  });
   });
  
     
   export const createBlog = (async (req, res) => {
-    const blog = new Blog({
+    const newBlog = new Blog({
       title: req.body.title,
       description: req.body.description,
-      image:req.body.image
     
     });
-    await blog.save();
-    res.send(blog);
+    await newBlog.save();
+    res.json({
+      status: 'success',
+      statusCode:201,
+      data: {
+          blog: newBlog
+      }
+  });
+
   });
   export const getBlog =  (async (req, res) => {
     try {
-      const blog = await Blog.findOne({ _id: req.params.id });
-      res.send(blog);
+      const newBlog = await Blog.findOne({ _id: req.params.id });
+      res.json({
+        status: 'success',
+        statusCode:200,
+        data: {
+            blog: newBlog
+        }
+    });
     } catch {
       res.status(404);
       res.send({ error: "blog doesn't exist!" });
