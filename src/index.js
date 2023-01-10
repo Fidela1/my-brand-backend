@@ -7,12 +7,8 @@ import swaggerDocument from './documentation';
 
 dotenv.config({ path: "./.env" });
 mongoose
-  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-  .then(() => {
-    
-   
-    
-  });
+  .connect("mongodb://localhost:27017/brandtestdb", { useNewUrlParser: true })
+ 
 
   const app = express();
 
