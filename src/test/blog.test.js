@@ -35,13 +35,13 @@ describe("blog tests", () => {
  
   describe("GET /api/v1/blogs/:id", () => {
     it('should respond with a 200 status code', async () => {
-      const response = await request(app).get("/api/v1/blogs/63bc67e4ef36312c68c66050")
+      const response = await request(app).get("/api/v1/blogs/63bc6cb2f2acdf394884a861")
       expect(response.statusCode).toBe(200)
     })
   }) 
   describe("UPDATE /api/v1/blogs/:id", () => {
     it('should respond with a 200 status code', async () => {
-      const response = await request(app).patch("/api/v1/blogs/63bc67e4ef36312c68c66050")
+      const response = await request(app).patch("/api/v1/blogs/63bc6cb2f2acdf394884a861")
       .send(blogData)
       expect(response.statusCode).toBe(200)
       
