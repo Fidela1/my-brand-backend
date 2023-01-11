@@ -41,4 +41,3 @@ jobs:
       - store_artifacts:
           path: coverage
        
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
