@@ -6,7 +6,7 @@ import app from "../index";
 dotenv.config({ path: "../.env" });
 /* Connecting to the database before each test. */
 beforeEach(async () => {
-  await mongoose.connect("mongodb://localhost:27017/brandtestdb", { useNewUrlParser: true });
+  await mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true });
 });
 
 /* Closing database connection after each test. */

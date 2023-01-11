@@ -35,13 +35,13 @@ describe("blog tests", () => {
  
   describe("GET /api/v1/blogs/:id", () => {
     it('should respond with a 200 status code', async () => {
-      const response = await request(app).get("/api/v1/blogs/63bc6cb2f2acdf394884a861")
+      const response = await request(app).get("/api/v1/blogs/63bc7d6cc3ada214dc7653bf")
       expect(response.statusCode).toBe(200)
     })
   }) 
   describe("UPDATE /api/v1/blogs/:id", () => {
     it('should respond with a 200 status code', async () => {
-      const response = await request(app).patch("/api/v1/blogs/63bc6cb2f2acdf394884a861")
+      const response = await request(app).patch("/api/v1/blogs/63bc7d6cc3ada214dc7653bf")
       .send(blogData)
       expect(response.statusCode).toBe(200)
       
@@ -49,7 +49,7 @@ describe("blog tests", () => {
   }) 
   describe("DELETE /api/v1/blogs/:id", () => {
     it("should respond with a 200 status code", async () => {
-      const response = await request(app).delete("/api/v1/blogs/639b29a40de8db40d97e1c1f");
+      const response = await request(app).delete("/api/v1/blogs/63bc6571ea70b537bc55c4a8");
       expect(response.statusCode).toBe(200);
     })
   })
