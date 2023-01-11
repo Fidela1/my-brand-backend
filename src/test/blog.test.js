@@ -21,7 +21,7 @@ describe("blog tests", () => {
   describe("GET /api/v1/blogs", () => {
     test('should respond with a 200 status code', async () => {
       const response = await request(app).get("/api/v1/blogs")
-      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWVhNjBmOTkzM2JhMmRiYzJhNTU1NCIsImlhdCI6MTY3MjM5MDE2NCwiZXhwIjoxNjgwMTY2MTY0fQ.xHhCKT2oNx_dNeVU8rOZrVZpwBlZ9VGqrg2pNhtptJo')
+      // .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWVhNjBmOTkzM2JhMmRiYzJhNTU1NCIsImlhdCI6MTY3MjM5MDE2NCwiZXhwIjoxNjgwMTY2MTY0fQ.xHhCKT2oNx_dNeVU8rOZrVZpwBlZ9VGqrg2pNhtptJo')
       expect(response.statusCode).toBe(200)
     })
   })
