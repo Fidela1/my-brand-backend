@@ -4,8 +4,9 @@ import dotenv from "dotenv";
 import app from "../index";
 dotenv.config({ path: "../.env" });
 /* Connecting to the database before each test. */
+jest.setTimeout(200000);
 beforeEach(async () => {
-  await mongoose.connect("mongodb://localhost:27017/brandtestdb", { useNewUrlParser: true });
+  await mongoose.connect(process.env.DATABASE_TEST_URL, { useNewUrlParser: true });
 });
 
 /* Closing database connection after each test. */
@@ -18,7 +19,7 @@ describe("like tests", () => {
       }
     describe("POST /api/v1/blogs/:id/likes", () => {
       it('should respond with a 201 status code', async () => {
-        const response = await request(app).post("/api/v1/blogs/63bc67e4ef36312c68c66050/likes")
+        const response = await request(app).post("/api/v1/blogs/63be84689470c211f8f93d46/likes")
         .send(likeData)
         expect(response.body.statusCode).toBe(200)
 
@@ -26,7 +27,7 @@ describe("like tests", () => {
     })
     describe("GET /api/v1/blogs/:id/likes", () => {
         it('should respond with a 200 status code', async () => {
-          const response = await request(app).get("/api/v1/blogs/63bc67e4ef36312c68c66050/likes")
+          const response = await request(app).get("/api/v1/blogs/63be84689470c211f8f93d46/likes")
           expect(response.statusCode).toBe(200)
         })
       }) 

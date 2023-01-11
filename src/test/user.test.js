@@ -5,8 +5,9 @@ import dotenv from "dotenv";
 import app from "../index";
 dotenv.config({ path: "../.env" });
 /* Connecting to the database before each test. */
+jest.setTimeout(90000);
 beforeEach(async () => {
-  await mongoose.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true });
+  await mongoose.connect(process.env.DATABASE_TEST_URL, { useNewUrlParser: true });
 });
 
 /* Closing database connection after each test. */
