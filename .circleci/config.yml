@@ -40,3 +40,5 @@ jobs:
       - coveralls/upload
       - store_artifacts:
           path: coverage
+       
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
