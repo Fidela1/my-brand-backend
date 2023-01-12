@@ -44,7 +44,8 @@ export const blog = {
         },
   },
 },
-'/api/v1/blogs/63bd1bfa19b5902738c05a86': {
+'api/v1/blogs/{id}': {
+  id:'63beb0c9ad3faa041789c261',
   get: {
     tags: ['blog'],
     summary: 'Get individual blog',
