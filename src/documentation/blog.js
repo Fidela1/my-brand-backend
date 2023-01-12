@@ -11,7 +11,7 @@ export const blog = {
           description: 'Create a new blog',
           required: true,
           schema:{
-            $ref:'#/definitions/update',
+            $ref:'#/definitions/Blogs',
           },
         },
       ],
@@ -28,6 +28,7 @@ export const blog = {
       }
       }
     },
+  
     '/api/v1/blogs/': {
         get: {
           tags: ['blog'],
@@ -42,10 +43,52 @@ export const blog = {
           
         },
   },
+},
+'api/v1/blogs/{id}': {
+  id:'63beb0c9ad3faa041789c261',
+  get: {
+    tags: ['blog'],
+    summary: 'Get individual blog',
+    description: 'Get individual blog',
+    produces: ['application/json'],
+    responses: {
+      200: {
+      
+        description: 'Ok',
+      },
+    
+  },
+},
+},
+'/api/v1/blogs/63bd1bfa19b5902738c05a86': {
+  patch: {
+    tags: ['blog'],
+    summary: 'update blog',
+    description: 'update blog',
+    produces: ['application/json'],
+    parameters:[{
+      name: 'body',
+      in: 'body',
+      description: 'Create a new blog',
+      required: true,
+      schema:{
+        $ref:'#/definitions/update',
+      },
+    },
+  ],
+    responses: {
+      200: {
+      
+        description: 'Ok',
+      },
+    
+  },
+},
+
 }
 }
   export const blogDefinition ={
-    update: {
+    Blogs: {
       type:'object',
       in:'body',
       required:[

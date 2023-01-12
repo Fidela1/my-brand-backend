@@ -25,7 +25,7 @@ const {
     } = require('../../validation/validatinMiddleware')
     
 router
-      .get("/", authentication.protect, getAllBlogs)
+      .get("/", getAllBlogs)
       .post("/" , validate(validation.person),createBlog)
       .get("/:id",getBlog)
       .patch("/:id",updateBlog )

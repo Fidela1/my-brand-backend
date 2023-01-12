@@ -5,8 +5,9 @@ import dotenv from "dotenv";
 import app from "../index";
 dotenv.config({ path: "../.env" });
 /* Connecting to the database before each test. */
+jest.setTimeout(200000);
 beforeEach(async () => {
-  await mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+  await mongoose.connect(process.env.DATABASE_TEST_URL, { useNewUrlParser: true });
 });
 
 /* Closing database connection after each test. */
@@ -16,9 +17,9 @@ afterEach(async () => {
 
 describe("user tests", () => {
   const userData = {
-    name: "fvf1bg2wr2e1de3ryre",
-    email: "fida13ewr2eeddedydyr45re@gmail.com",
-    password: "pacvbnss1"
+    name: "fidela",
+    email: "fidela123@gmail.com",
+    password: "pass123"
   }
 
   describe("POST /api/v1/users/signup", () => {
