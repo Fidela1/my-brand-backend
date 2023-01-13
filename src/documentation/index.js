@@ -38,7 +38,7 @@ const config = {
 
   servers: [
     {
-      url: 'http://my-brand-backend-production.up.railway.app',
+      url: 'https://my-brand-backend-production.up.railway.app',
       name: 'DEV',
     },
   ],
