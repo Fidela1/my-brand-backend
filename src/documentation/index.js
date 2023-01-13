@@ -13,7 +13,7 @@ const config = {
     contact: {
       name: 'Fidela',
       email: 'fidelatuyizere4@gmail.com',
-      url: 'localhost:3080/api/v1/api-docs',
+      url: 'my-brand-backend-production.up.railway.app/api/v1/api-docs',
     },
     license: {
       name: 'Apache 2.0',
@@ -38,7 +38,7 @@ const config = {
 
   servers: [
     {
-      url: 'http://localhost:3080',
+      url: 'http://my-brand-backend-production.up.railway.app',
       name: 'DEV',
     },
   ],

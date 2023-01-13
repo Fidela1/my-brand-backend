@@ -17,6 +17,7 @@ afterEach(async () => {
 
 describe("blog tests", () => {
   const blogData = {
+    id:"63be84689470c211f8f93d46",
     title:"first",
     description:"new"
   }

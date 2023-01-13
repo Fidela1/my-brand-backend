@@ -31,6 +31,7 @@ export const getAllBlogs = (async (req, res) => {
   });
 
   });
+  
   export const getBlog =  (async (req, res) => {
     try {
       const newBlog = await Blog.findOne({ _id: req.params.id });

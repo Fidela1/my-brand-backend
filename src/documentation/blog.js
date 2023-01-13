@@ -1,3 +1,5 @@
+import { string } from "joi"
+
 export const blog = {
     '/api/v1/blogs': {
       post: {
@@ -44,38 +46,17 @@ export const blog = {
         },
   },
 },
-'api/v1/blogs/{id}': {
-  id:'63beb0c9ad3faa041789c261',
+'/api/v1/blogs/{id}': {
   get: {
     tags: ['blog'],
     summary: 'Get individual blog',
     description: 'Get individual blog',
     produces: ['application/json'],
-    responses: {
-      200: {
-      
-        description: 'Ok',
-      },
-    
-  },
-},
-},
-'/api/v1/blogs/63bd1bfa19b5902738c05a86': {
-  patch: {
-    tags: ['blog'],
-    summary: 'update blog',
-    description: 'update blog',
-    produces: ['application/json'],
     parameters:[{
-      name: 'body',
-      in: 'body',
-      description: 'Create a new blog',
-      required: true,
-      schema:{
-        $ref:'#/definitions/update',
-      },
-    },
-  ],
+      name:'id',
+      in:'path',
+      type:"string"
+  }],
     responses: {
       200: {
       
@@ -84,8 +65,31 @@ export const blog = {
     
   },
 },
+},
+// 'api/v1/blogs/{id}': {
+//   patch: {
+//     tags: ['blog'],
+//     summary: 'update blog',
+//     description: 'update blog',
+//     parameters:[{
+//       name: 'id',
+//       in: 'path',
+//       type:'string',
+//       description: 'update new blog',
+//       required: true,
+      
+//     },
+//   ],
+//     responses: {
+//       200: {
+      
+//         description: 'Ok',
+//       },
+    
+//   },
+// },
 
-}
+// }
 }
   export const blogDefinition ={
     Blogs: {
