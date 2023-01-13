@@ -21,7 +21,7 @@ const config = {
     },
   },
 
-  schemes: ['HTTP', 'HTTPS'],
+  schemes: ['HTTPS'],
 
   securityDefinitions: {
     Bearer: {
