@@ -3,20 +3,21 @@ import { string } from "joi"
 export const blog = {
     '/api/v1/blogs': {
       post: {
-        tags:['blog'],
+        tags: ['blog'],
         summary: 'CREATE',
-        consumes:['application/json'],
-        produces:['application/json'],
-        parameters:[{
+        consumes: ['application/json'],
+        produces: ['application/json'],
+        parameters: [{
           name: 'body',
           in: 'body',
           description: 'Create a new blog',
           required: true,
-          schema:{
-            $ref:'#/definitions/Blogs',
+          schema: {
+            $ref: '#/definitions/Blogs',
           },
         },
       ],
+      
       responses: {
         200: {
           description: 'Success',
@@ -65,36 +66,56 @@ export const blog = {
     
   },
 },
-},
-// 'api/v1/blogs/{id}': {
-//   patch: {
-//     tags: ['blog'],
-//     summary: 'update blog',
-//     description: 'update blog',
-//     parameters:[{
-//       name: 'id',
-//       in: 'path',
-//       type:'string',
-//       description: 'update new blog',
-//       required: true,
-      
-//     },
-//   ],
-//     responses: {
-//       200: {
-      
-//         description: 'Ok',
-//       },
+patch: {
+  tags: ['blog'],
+  summary: 'update blog',
+  description: 'update blog',
+  produces: ['application/json'],
+  parameters:[{
+    name:'title',
+    in:'path',
+    type:"string"
+}],
+  parameters:[{
+    name:'id',
+    in:'path',
+    type:"string"
+}],
+  responses: {
+    200: {
     
-//   },
-// },
-
-// }
+      description: 'Ok',
+    },
+  
+},
+},
+delete: {
+  tags: ['blog'],
+  summary: 'delete blog',
+  description: 'deleteblog',
+  produces: ['application/json'],
+  parameters:[{
+    name:'id',
+    in:'path',
+    type:"string"
+}],
+  responses: {
+    200: {
+    
+      description: 'Ok',
+    },
+  
+},
+},
+},
 }
+
+
+
   export const blogDefinition ={
     Blogs: {
       type:'object',
-      in:'body',
+      in:'path',
       required:[
         'title',
         'description',

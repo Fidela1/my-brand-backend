@@ -78,7 +78,7 @@ export const getAllBlogs = (async (req, res) => {
 	try {
 		await Blog.deleteOne({ _id: req.params.id })
 		res.json({
-      status: 'success',
+      status: 'blog is deleted',
       statusCode:200,
   });
 	} catch {
