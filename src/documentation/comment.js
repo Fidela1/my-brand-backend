@@ -34,27 +34,27 @@ export const comment = {
       }
     },
   
-    '/api/v1/blogs/{id}/comments': {
-        get: {
-          tags: ['blog'],
-          summary: 'Get individual blog',
-          description: 'Get individual blog',
-          produces: ['application/json'],
-          parameters:[{
-      name:'id',
-      in:'path',
-      type:'string'
-          }],
-          responses: {
-            200: {
+//     '/api/v1/blogs/{id}/comments': {
+//         get: {
+//           tags: ['blog'],
+//           summary: 'Get individual blog',
+//           description: 'Get individual blog',
+//           produces: ['application/json'],
+//           parameters:[{
+//       name:'id',
+//       in:'path',
+//       type:'string'
+//           }],
+//           responses: {
+//             200: {
             
-              description: 'Ok',
-            },
+//               description: 'Ok',
+//             },
           
-        },
-      },
+//         },
+//       },
 
-}
+// }
 }
 
   export const commentDefinition ={
