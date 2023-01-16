@@ -92,7 +92,7 @@ parameters:[{
   name: 'id',
   in: 'path',
   description: 'update new blog',
- type:'integer',
+ type:'string',
   schema:{
     $ref:'#/definitions/updateUser',
   },
