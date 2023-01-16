@@ -1,8 +1,9 @@
 import welcome from './welcome.js';
 import {user, userDefinition} from './user';
 import {blog, blogDefinition} from './blog';
-const paths = { ...welcome, ...user, ...blog};
-const definitions = {...userDefinition, ...blogDefinition}
+import { comment, commentDefinition } from './comment.js';
+const paths = { ...welcome, ...user, ...blog, ...comment};
+const definitions = {...userDefinition, ...blogDefinition, ...commentDefinition}
 
 const config = {
   swagger: '2.0',
@@ -13,7 +14,7 @@ const config = {
     contact: {
       name: 'Fidela',
       email: 'fidelatuyizere4@gmail.com',
-      url: 'localhost:3080/api/v1/api-docs',
+      url: 'http://my-brand-backend-production.up.railway.app/api/v1/api-docs',
     },
     license: {
       name: 'Apache 2.0',
@@ -38,7 +39,7 @@ const config = {
 
   servers: [
     {
-      url: 'http://localhost:3080',
+      url: 'https://my-brand-backend-production.up.railway.app',
       name: 'DEV',
     },
   ],

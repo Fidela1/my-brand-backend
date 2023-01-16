@@ -45,12 +45,16 @@ export const blog = {
   },
 },
 'api/v1/blogs/{id}': {
-  id:'63beb0c9ad3faa041789c261',
   get: {
     tags: ['blog'],
     summary: 'Get individual blog',
     description: 'Get individual blog',
     produces: ['application/json'],
+    parameters:[{
+name:'id',
+in:'path',
+type:'string'
+    }],
     responses: {
       200: {
       
@@ -59,8 +63,7 @@ export const blog = {
     
   },
 },
-},
-'/api/v1/blogs/63bd1bfa19b5902738c05a86': {
+
   patch: {
     tags: ['blog'],
     summary: 'update blog',
@@ -84,8 +87,23 @@ export const blog = {
     
   },
 },
-
-}
+delete: {
+  tags: ['blog'],
+  summary: 'delete blog',
+  description: 'deleteblog',
+  produces: ['application/json'],
+  parameters:[{
+    name:'id',
+    in:'path',
+    type:"string"
+}],
+response: {
+  200: {
+    description: 'ok'
+  },
+},
+},
+},
 }
   export const blogDefinition ={
     Blogs: {
