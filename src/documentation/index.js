@@ -14,11 +14,11 @@ const config = {
     contact: {
       name: 'Fidela',
       email: 'fidelatuyizere4@gmail.com',
-      url: 'http://my-brand-backend-production.up.railway.app/api/v1/api-docs',
+      url: 'https://my-brand-backend-production.up.railway.app/api/v1/api-docs',
     },
     license: {
       name: 'Apache 2.0',
-      url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+      url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
     },
   },
 
