@@ -72,32 +72,21 @@ type:'string'
     parameters:[{
       name: 'body',
       in: 'body',
-      description: 'update blog',
+      description: 'Create a new blog',
       required: true,
       schema:{
-        $ref:'#/definitions/updateBlog',
+        $ref:'#/definitions/update',
       },
     },
   ],
-  responses: {
-    200: {
-      description: 'Success',
-      schema:{
-        $ref:'#/definitions/Blog',
+    responses: {
+      200: {
+      
+        description: 'Ok',
       },
-    },
-
-},
-parameters:[{
-  name: 'id',
-  in: 'path',
-  description: 'update new blog',
- type:'string',
-  schema:{
-    $ref:'#/definitions/updateUser',
+    
   },
 },
-],
 delete: {
   tags: ['blog'],
   summary: 'delete blog',
@@ -115,7 +104,6 @@ response: {
 },
 },
 },
-}
 }
   export const blogDefinition ={
     Blogs: {
