@@ -72,10 +72,10 @@ type:'string'
     parameters:[{
       name: 'body',
       in: 'body',
-      description: 'Create a new blog',
+      description: 'update blog',
       required: true,
       schema:{
-        $ref:'#/definitions/update',
+        $ref:'#/definitions/UpdateBlog',
       },
     },
   ],
@@ -107,6 +107,20 @@ response: {
 }
   export const blogDefinition ={
     Blogs: {
+      type:'object',
+      in:'body',
+      required:[
+        'title',
+        'description',
+        
+      ],
+      properties: {
+        title: {type:'string'},
+        description: {type:'string'},
+        
+      }
+    },
+    UpdateBlog: {
       type:'object',
       in:'body',
       required:[
