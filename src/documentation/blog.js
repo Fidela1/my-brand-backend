@@ -102,8 +102,8 @@ response: {
     description: 'ok'
   },
 },
-},
-},
+}
+}
 }
   export const blogDefinition ={
     Blogs: {

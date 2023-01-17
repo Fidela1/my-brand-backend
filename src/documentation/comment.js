@@ -6,11 +6,6 @@ export const comment = {
         consumes:['application/json'],
         produces:['application/json'],
         parameters:[{
-            name:'id',
-            in:'path',
-            type:'string'
-        }],
-        parameters:[{
           name: 'body',
           in: 'body',
           description: 'Create a newcomment',

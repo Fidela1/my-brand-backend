@@ -1,9 +1,9 @@
 import welcome from './welcome.js';
 import {user, userDefinition} from './user';
 import {blog, blogDefinition} from './blog';
-import { comment, commentDefinition } from './comment.js';
-const paths = { ...welcome, ...user, ...blog, ...comment};
-const definitions = {...userDefinition, ...blogDefinition, ...commentDefinition}
+// import { comment, commentDefinition } from './comment.js';
+const paths = { ...welcome, ...user, ...blog};
+const definitions = {...userDefinition, ...blogDefinition}
 
 const config = {
   swagger: '2.0',
@@ -28,11 +28,6 @@ const config = {
     Bearer: {
       type: 'apiKey',
       name: 'authorization',
-      in: 'header',
-    },
-    ApiKeyAuth: {
-      type: 'apiKey',
-      name: 'refreshToken',
       in: 'header',
     },
   },
