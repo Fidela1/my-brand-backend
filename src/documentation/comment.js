@@ -53,7 +53,7 @@ export const comment = {
 }
 
   export const commentDefinition ={
-    Blogs: {
+   Comments: {
       type:'object',
       in:'body',
       required:[
