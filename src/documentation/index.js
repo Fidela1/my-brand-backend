@@ -1,14 +1,15 @@
 import welcome from './welcome.js';
 import {user, userDefinition} from './user';
 import {blog, blogDefinition} from './blog';
-const paths = { ...welcome, ...user, ...blog};
-const definitions = {...userDefinition, ...blogDefinition}
+import { comment, commentDefinition } from './comment.js';
+const paths = { ...welcome, ...user, ...blog, ...comment};
+const definitions = {...userDefinition, ...blogDefinition, ...commentDefinition}
 
 const config = {
   swagger: '2.0',
   info: {
-    title: 'Codex API ',
-    description: 'This Brand API a project',
+    title: 'My brand  API ',
+    description: 'This my brand a project',
     version: '1.0.0',
     contact: {
       name: 'Fidela',
@@ -17,7 +18,7 @@ const config = {
     },
     license: {
       name: 'Apache 2.0',
-      url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+      url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
     },
   },
 
@@ -27,11 +28,6 @@ const config = {
     Bearer: {
       type: 'apiKey',
       name: 'authorization',
-      in: 'header',
-    },
-    ApiKeyAuth: {
-      type: 'apiKey',
-      name: 'refreshToken',
       in: 'header',
     },
   },

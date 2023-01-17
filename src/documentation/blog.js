@@ -108,7 +108,24 @@ delete: {
 },
 },
 },
+delete: {
+  tags: ['blog'],
+  summary: 'delete blog',
+  description: 'deleteblog',
+  produces: ['application/json'],
+  parameters:[{
+    name:'id',
+    in:'path',
+    type:"string"
+}],
+response: {
+  200: {
+    description: 'ok'
+  },
+},
 }
+}
+
 
 
 
@@ -116,6 +133,20 @@ delete: {
     Blogs: {
       type:'object',
       in:'path',
+      required:[
+        'title',
+        'description',
+        
+      ],
+      properties: {
+        title: {type:'string'},
+        description: {type:'string'},
+        
+      }
+    },
+    UpdateBlog: {
+      type:'object',
+      in:'body',
       required:[
         'title',
         'description',

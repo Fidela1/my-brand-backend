@@ -2,7 +2,7 @@ export const user = {
   '/api/v1/users/signup': {
     post: {
       tags: ['Authentication'],
-      summary: 'This will login a user',
+      summary: 'This will register user',
       description: '',
       produces: ['production/json'],
       parameters: [
@@ -36,7 +36,7 @@ export const user = {
   '/api/v1/users/login': {
     post: {
       tags: ['Authentication'],
-      summary: 'This will register a new user',
+      summary: 'This will login user',
       description: '',
       produces: ['production/json'],
       parameters: [
