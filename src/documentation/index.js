@@ -8,8 +8,8 @@ const definitions = {...userDefinition, ...blogDefinition, ...commentDefinition}
 const config = {
   swagger: '2.0',
   info: {
-    title: 'Codex API ',
-    description: 'This Codex API a project',
+    title: 'My brand  API ',
+    description: 'This my brand a project',
     version: '1.0.0',
     contact: {
       name: 'Fidela',
