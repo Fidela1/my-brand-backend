@@ -16,10 +16,11 @@ export const getAllBlogs = (async (req, res) => {
  
     
   export const createBlog = (async (req, res) => {
+    console.log(req.file);
+    console.log(req.body)
     const newBlog = new Blog({
       title: req.body.title,
       description: req.body.description,
-    
     });
     await newBlog.save();
     res.json({

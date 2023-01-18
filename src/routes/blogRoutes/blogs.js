@@ -2,7 +2,7 @@ import express from "express";
 import validation from "../../validation/blogValidation";
 import authentication from "../../contoller/authentication"
 import multer from "multer"
-const upload = multer ({dest:'uploads/'});
+const upload = multer ({dest:'uploads/image'});
 import {
   getAllBlogs,
   createBlog,
@@ -26,10 +26,10 @@ const {
     
 router
       .get("/", getAllBlogs)
-      .post("/" , validate(validation.person),createBlog)
+      .post("/" , upload.single('photo'), validate(validation.person),authentication.protect,createBlog)
       .get("/:id",getBlog)
-      .patch("/:id",updateBlog )
-      .delete("/:id", deleteBlog)
+      .patch("/:id",authentication.protect,updateBlog )
+      .delete("/:id",authentication.protect, deleteBlog)
 
 router
 

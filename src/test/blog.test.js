@@ -23,7 +23,6 @@ describe("blog tests", () => {
   describe("GET /api/v1/blogs", () => {
     test('should respond with a 200 status code', async () => {
       const response = await request(app).get("/api/v1/blogs")
-      // .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWVhNjBmOTkzM2JhMmRiYzJhNTU1NCIsImlhdCI6MTY3MjM5MDE2NCwiZXhwIjoxNjgwMTY2MTY0fQ.xHhCKT2oNx_dNeVU8rOZrVZpwBlZ9VGqrg2pNhtptJo')
       expect(response.statusCode).toBe(200)
     })
   })
@@ -31,6 +30,8 @@ describe("blog tests", () => {
     it('should respond with a 201 status code', async () => {
       const response = await request(app).post("/api/v1/blogs")
         .send(blogData)
+       .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U')
+
       expect(response.body.statusCode).toBe(201)
     })
   })
@@ -45,13 +46,15 @@ describe("blog tests", () => {
     it('should respond with a 200 status code', async () => {
       const response = await request(app).patch("/api/v1/blogs/63be84689470c211f8f93d46")
       .send(blogData)
+      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U')
       expect(response.statusCode).toBe(200)
       
     })
   }) 
   describe("DELETE /api/v1/blogs/:id", () => {
     it("should respond with a 200 status code", async () => {
-      const response = await request(app).delete("/api/v1/blogs/63be8570b626c427b4ca319c");
+      const response = await request(app).delete("/api/v1/blogs/63be8570b626c427b4ca319c")
+      .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U')
       expect(response.statusCode).toBe(200);
     })
   })
