@@ -53,7 +53,7 @@ describe("blog tests", () => {
   }) 
   describe("DELETE /api/v1/blogs/:id", () => {
     it("should respond with a 200 status code", async () => {
-      const response = await request(app).delete("/api/v1/blogs/63bebf32c4050139044b25c6")
+      const response = await request(app).delete("/api/v1/blogs/63bea167706be404409ed3ea")
       .set("Authorization",'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5YzIzOTI3OThlMGEyN2M3NmE0YSIsImlhdCI6MTY3NDAyNjAyMywiZXhwIjoxNjgxODAyMDIzfQ.ppRQTBMG3U6gNudviKJSGieDQLwexa8nvUA5Jmrwprg')
       expect(response.statusCode).toBe(200);
     })
