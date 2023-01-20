@@ -10,9 +10,6 @@ const schema = mongoose.Schema({
   blog_image:{
     type:String,
   }, 
-  cloudinary_id: {
-    type:String,
-  },
 });
 
 module.exports = mongoose.model("blog", schema);

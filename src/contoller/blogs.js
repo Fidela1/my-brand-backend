@@ -16,11 +16,12 @@ export const getAllBlogs = (async (req, res) => {
  
     
   export const createBlog = (async (req, res) => {
-    console.log(req.file);
-    console.log(req.body)
+  
+    console.log("--------bfhgfgjghdfjgdfjgdfjgdfjgdfjdgf",req.body)
     const newBlog = new Blog({
       title: req.body.title,
       description: req.body.description,
+      blog_image: req.body.image,
     });
     await newBlog.save();
     res.json({
@@ -35,7 +36,7 @@ export const getAllBlogs = (async (req, res) => {
   export const getBlog =  (async (req, res) => {
     try {
       const newBlog = await Blog.findOne({ _id: req.params.id });
-
+console.log('---------------------------',newBlog)
       res.json({
         status: 'success',
         statusCode:200,
@@ -58,6 +59,10 @@ export const getAllBlogs = (async (req, res) => {
   
       if (req.body.description) {
         newBlog.description = req.body.description;
+      }
+      console.log(req.body)
+      if (req.body.image) {
+        newBlog.blog_image = req.body.image;
       }
   
       await newBlog.save();

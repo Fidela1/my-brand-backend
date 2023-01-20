@@ -8,7 +8,7 @@ import swaggerDocument from './documentation';
 
 dotenv.config({ path: "./.env" });
 mongoose
-  .connect(process.env.DATABASE_TEST_URL, { useNewUrlParser: true })
+  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 .then (() =>{
   console.log('mongodb started .....')
 })
