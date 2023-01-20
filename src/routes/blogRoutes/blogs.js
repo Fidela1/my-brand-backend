@@ -26,10 +26,10 @@ const {
     
 router
       .get("/", getAllBlogs)
-      .post("/" , validate(validation.person),createBlog)
+      .post("/" ,  validate(validation.person),authentication.protect,createBlog)
       .get("/:id",getBlog)
-      .patch("/:id",updateBlog )
-      .delete("/:id", deleteBlog)
+      .patch("/:id",authentication.protect,updateBlog )
+      .delete("/:id",authentication.protect, deleteBlog)
 
 router
 

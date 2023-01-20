@@ -20,14 +20,14 @@ describe("comment tests", () => {
     }
     describe("POST /api/v1/blogs/:id/comments", () => {
       it('should respond with a 201 status code', async () => {
-        const response = await request(app).post("/api/v1/blogs/63be84689470c211f8f93d46/comments")
+        const response = await request(app).post("/api/v1/blogs/63c79a9151a613066c95744c/comments")
           .send(commentData)
         expect(response.body.statusCode).toBe(201)
       })
     })
     describe("GET /api/v1/blogs/:id/comments", () => {
         it('should respond with a 200 status code', async () => {
-          const response = await request(app).get("/api/v1/blogs/63be84689470c211f8f93d46/comments")
+          const response = await request(app).get("/api/v1/blogs/63c79a9151a613066c95744c/comments")
           expect(response.statusCode).toBe(200)
         })
       }) 

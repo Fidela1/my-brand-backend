@@ -7,11 +7,9 @@ const schema = mongoose.Schema({
     type:String,
     required:true,
   },
-
-  image:{
-    type: String,
-  
-},
+  blog_image:{
+    type:String,
+  }, 
 });
 
 module.exports = mongoose.model("blog", schema);

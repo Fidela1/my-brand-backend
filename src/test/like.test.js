@@ -19,7 +19,7 @@ describe("like tests", () => {
       }
     describe("POST /api/v1/blogs/:id/likes", () => {
       it('should respond with a 201 status code', async () => {
-        const response = await request(app).post("/api/v1/blogs/63be84689470c211f8f93d46/likes")
+        const response = await request(app).post("/api/v1/blogs/63c79a9151a613066c95744c/likes")
         .send(likeData)
         expect(response.body.statusCode).toBe(200)
 
@@ -27,7 +27,7 @@ describe("like tests", () => {
     })
     describe("GET /api/v1/blogs/:id/likes", () => {
         it('should respond with a 200 status code', async () => {
-          const response = await request(app).get("/api/v1/blogs/63be84689470c211f8f93d46/likes")
+          const response = await request(app).get("/api/v1/blogs/63c79a9151a613066c95744c/likes")
           expect(response.statusCode).toBe(200)
         })
       }) 
@@ -39,7 +39,7 @@ describe("like tests", () => {
       }
     describe("POST /api/v1/blogs/:id/messages", () => {
       it('should respond with a 201 status code', async () => {
-        const response = await request(app).post("/api/v1/blogs/63bc67e4ef36312c68c66050/messages")
+        const response = await request(app).post("/api/v1/blogs/63c79a9151a613066c95744c/messages")
         .send(messageData)
         expect(response.body.statusCode).toBe(201)
 
@@ -47,7 +47,7 @@ describe("like tests", () => {
     })
     describe("GET /api/v1/blogs/:id/messages", () => {
         it('should respond with a 200 status code', async () => {
-          const response = await request(app).get("/api/v1/blogs/63bc67e4ef36312c68c66050/messages")
+          const response = await request(app).get("/api/v1/blogs/63c79a9151a613066c95744c/messages")
           expect(response.statusCode).toBe(200)
         })
       }) 
