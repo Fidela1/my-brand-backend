@@ -93,6 +93,8 @@ console.log('---------------------------',newBlog)
 })
 
 export const blogComment = (async (req, res) => {
+  console.log("body:",req.body,"id:", req.params.id)
+
     const newComment = new Comment({
       name: req.body.name,
       comment: req.body.comment,

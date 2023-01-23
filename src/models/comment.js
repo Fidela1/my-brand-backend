@@ -1,9 +1,18 @@
 import mongoose from "mongoose";
 
 const commentschema = mongoose.Schema({
-  name: String,
-  comment: String,
-  blogId:String
+  name:  {
+    type:String,
+    required:true,
+  },
+  comment:  {
+    type:String,
+    required:true,
+  },
+  blogId: {
+    type:String,
+    required:true,
+  }
 
 });
 
