@@ -93,8 +93,7 @@ console.log('---------------------------',newBlog)
 })
 
 export const blogComment = (async (req, res) => {
-  console.log("body:",req.body,"id:", req.params.id)
-
+try{
     const newComment = new Comment({
       name: req.body.name,
       comment: req.body.comment,
@@ -108,17 +107,22 @@ export const blogComment = (async (req, res) => {
       data: {
           comment: newComment
       }
-  });
+  })
+  } catch (error){
+    res.status(404);
+    res.send({ error:error._message});
+  }
+  
   })
 
   export const getComment =  (async (req, res) => {
     try {
-      const newComment = await Comment.findOne({ _id: req.params.id });
+      const blogComments = await Comment.find({ "blogId": req.params.id });
       res.json({
         status: 'success',
         statusCode:200,
         data: {
-            comment: newComment
+            comments: blogComments
         }
     });
     } catch {
